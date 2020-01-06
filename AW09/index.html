@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/181c94503b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="general.css">
+    <title>Order | Red Pepper Pizza</title>
+</head>
+<body>
+    <div id="header">
+        <div id="header__nav">
+            <ul>
+                <li><a href="#"><div><i class="fas fa-home"></i></div></a></li>
+                <li id="header__nav__active"><a href="#"><div>Order</div></a></li>
+                <li><a href="#"><div>Menu</div></a></li>
+                <li><a href="#"><div>Contact us!</div></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="pizza__order">
+        <div class="order_item" ><input type="hidden" value="12.99"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 1</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="15.69"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 2</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="12.99"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 3</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="10.59"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 4</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="12.99"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 5</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="9.99"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 6</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="12.00"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 7</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="12.19"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 8</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="18.99"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 9</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="18.99"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 9</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="18.99"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 9</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="18.99"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 9</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+        <div class="order_item" ><input type="hidden" value="18.99"><div class="order_item_img"><img src="assets/pizza_order.png" alt="pizza 1"></div><h3>Pizza 9</h3><div class="add_to_cart_btn">Add to cart!</div></div>
+    </div>
+    <div id="order">
+        <div id="order__block_1">
+            <h3>Enter your informations:</h3>
+            <form id="order__form" action="#" method="get">
+                <span class="order_input_field">
+                    <label for="order_name">Name: </label>
+                    <input id="order_name" name="name" type="text" required>
+                </span>
+                <span class="order_input_field">
+                    <label for="order_tel_number">Phone: </label>
+                    <input id="order_tel_number" name="phone" type="text" required>
+                </span>
+                <span class="order_input_field">
+                    <label for="order_name">Address: </label>
+                    <input id="order_adresse" name="adresse" type="text" required>
+                </span>
+                <input id="order_list_input_value" type="hidden" name="orders">
+            </form>
+            <div id="order__submit" onclick="submit_order_form()"><h3>Check Out!</h3></div>
+        </div>
+        <div onclick="delete_elements(this)" id="order__block_2">
+            <div id="shopping_cart">
+                <h3>Shopping cart:</h3>
+                <ol>
+
+                </ol>
+                <p>Sum: </p>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="footer">
+
+    </footer>
+</body>
+</html>
+
+<script>
+    let amount = 0;
+    function submit_order_form()
+    {
+        var html = $("#shopping_cart ol").html();
+        $("#order_list_input_value").val(html);
+        if ($("#order__form").valid() && amount > 0)
+            document.getElementById("order__form").submit();
+    }
+    
+    $(".order_item .add_to_cart_btn").click(
+        function () {
+            var sum = 0.0;
+            $("#shopping_cart ol").append("<li> " + $(this).parent().find("h3").html() + " - " + $(this).parent().find("input").val() + "$ <input value='" + $(this).parent().find("input").val() + "' type='hidden'> </input> <i  onclick='delete_element(this)' class='fas fa-trash-alt'></i> </li>");
+            $("#shopping_cart ol li").each(function (){
+                sum += parseFloat($(this).find("input").val());
+            });
+            $("#shopping_cart p").html("SUM: " + sum.toFixed(2) + "$");
+            amount++;
+        }
+    );
+
+    function delete_element(e)
+    {
+        $(e).parent().remove();
+        var sum = 0.0;
+        $("#shopping_cart ol li").each(function (){
+            sum += parseFloat($(this).find("input").val());
+        });
+        $("#shopping_cart p").html("SUM: " + sum.toFixed(2) + "$");
+    }
+    
+</script>
