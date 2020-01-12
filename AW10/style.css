@@ -218,8 +218,97 @@ nav a i {
 }
 
 #order_main_container {
-	height: 800px;
+	height: fit-content;
 	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#order_items {
+	margin: 10px;
+	border: 1px solid black;
+	width: calc(90% * 2/ 3);
+	overflow-y: scroll;
+	height: 650px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	background-color: white;
+	background-color: rgb(155, 232, 255);
+}
+
+.order_item {
+	border: 1px solid black;
+	background-color: rgb(132, 226, 255);
+	background-color: rgb(226, 144, 77);
+	margin: 10px;
+	width: 200px;
+	height: 200px;
+	cursor: pointer;
+}
+
+.order_item:hover {
+	background-color: rgb(241, 160, 93);
+}
+
+.order_item img {
+	display: block;
+	margin: 0 auto;
+	height: 200px;
+}
+
+#order_order {
+	margin: 10px;
+	border: 1px solid black;
+	width: calc(90% / 3);
+	height: 650px;
+	background-color: rgb(155, 232, 255);
+}
+
+#order_specs {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border-bottom: 1px solid black;
+}
+
+#order_specs h3 {
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+}
+
+#order_order_resume {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 10px;
+	border: 1px solid black;
+	width: calc(50%);
+	margin: 0 auto;
+	height: fit-content;
+	margin-bottom: 10px;
+	background-color: rgb(155, 232, 255);
+	text-align: center;
+}
+
+#order_order_resume form input {
+	width: 80%;
+	height: 50px;
+	display: block;
+	margin: 0 auto;
+}
+
+#order_order_resume form button[type=submit] 
+{
+	display: block;
+	width: 100px;
+	height: 40px;
+	background-color: rgb(226, 144, 77);
+	margin-left: auto;
+	margin-right: auto;
 }
 
 footer {
@@ -270,6 +359,18 @@ nav a {
 .homepage_showcase {
 	width: 95%;
 	margin: 10px 0;
+}
+
+#order_items {
+	width: calc(95%);
+}
+
+#order_order {
+	width: calc(95%);
+}
+
+#order_order_resume {
+	width: calc(95%);
 }
 
 }
