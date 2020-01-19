@@ -4,6 +4,7 @@
 		border-top:  1px solid rgb(0, 255, 13);
 	}
 </style>
+<meta name="description" content="Send us an email if you have any questions!">
 <main>
 	<h1>Contact us</h1>
 	<form id="contact_form" action="#" method="post">

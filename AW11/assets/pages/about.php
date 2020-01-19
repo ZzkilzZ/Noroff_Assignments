@@ -4,7 +4,11 @@
 		border-top:  1px solid rgb(0, 255, 13);
 	}
 </style>
+<meta name="description" content="We are an group of active cyclists living in paris and we are here to share out favorite spots with you...">
 <main>
 	<h1>About us</h1>
-	
-</main>
+	<section id="about_section">
+		<img src="assets/img/bicycling-1160860_1280.jpg" alt="">
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor, commodi obcaecati dignissimos consectetur expedita corporis suscipit a provident doloribus id qui magni similique eum magnam perspiciatis error assumenda tenetur praesentium?</p>
+	</section>
+	</main>
