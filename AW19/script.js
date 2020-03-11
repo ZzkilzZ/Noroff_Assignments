@@ -29,9 +29,10 @@ var catArray = [{
 
 // question 8
 catArray.forEach( (item) => {
-	Object.keys(item).forEach((property) => {
-		console.log(property);
-	})
+	if (typeof item == "object")
+		Object.keys(item).forEach((property) => {
+			console.log(item[property]);
+		})
 })
 
 // question 9
